@@ -1,0 +1,258 @@
+/* Efek gulir mulus khas landing page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mengubah Header menjadi Hero Section (Satu layar penuh) */
+header {
+   
+    
+    /* Tiga baris ini membuat konten selalu di tengah layar */
+    min-height: 100vh; /* 100vh berarti 100% tinggi layar monitor/HP */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* Mengatur font dasar dan menghilangkan margin bawaan */
+body {
+    font-family: Boulder, serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #ffffff; /* Mengubah semua teks dasar menjadi putih */
+    
+    /* Latar Belakang Foto untuk Semua Halaman */
+    background: linear-gradient(rgba(20, 30, 48, 0.85), rgba(36, 59, 85, 0.85)), url('bg-kerja3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Ini rahasianya: foto akan diam di tempat saat web di-scroll (Efek Parallax) */
+}
+
+/* Mengatur bagian Header (Judul Atas) */
+header {
+    /* Hapus baris background di sini */
+    color: #ffffff;
+    padding: 2rem;
+    text-align: center;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mengatur jarak pada setiap section */
+section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto; /* Membuat konten berada di tengah */
+}
+
+/* Mengatur kotak untuk proyek */
+.project-card {
+    background: #d82121;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* Mengatur tampilan foto profil */
+.profile-img {
+    width: 150px; /* Atur lebar foto */
+    height: 150px; /* Atur tinggi foto (harus sama dengan width agar bulat sempurna) */
+    object-fit: cover; /* Memastikan foto tidak gepeng */
+    border-radius: 50%; /* Membuat foto berbentuk lingkaran */
+    border: 5px solid rgb(252, 246, 251); /* Memberikan bingkai putih */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Memberikan efek bayangan lembut */
+    margin-bottom: 1rem; /* Memberikan jarak ke teks di bawahnya */
+}
+/* Desain Tombol Kontak */
+.btn-kontak {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: background-color 0.5; /* Efek transisi saat disentuh mouse */
+}
+
+/* Efek saat mouse berada di atas tombol (Hover) */
+.btn-kontak:hover {
+    background-color: #f70606;
+}
+/* Styling Tombol Unduh CV */
+.btn-cv {
+    display: inline-block;
+    background-color: #446da3; /* Warna hijau agar kontras dengan tombol kontak biru */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.btn-cv:hover {
+    background-color: #fc0303;
+}
+
+/* Styling Bagian Keahlian */
+.skills-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Agar otomatis turun jika layar HP sempit */
+}
+
+.project-card, .skill-card {
+    /* Menghapus background putih solid, menggantinya dengan putih transparan */
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); /* Memberikan efek kaca buram di belakang kartu */
+    -webkit-backdrop-filter: blur(10px); /* Untuk dukungan browser Safari */
+    
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Garis tepi tipis yang elegan */
+    color: #ffffff; /* Memastikan teks di dalam kartu berwarna putih */
+    
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Bayangan yang lebih lembut */
+}
+
+/* Memastikan judul di dalam kartu keahlian juga berwarna terang */
+.skill-card h3 {
+    color: #3498db; /* Warna biru terang agar menonjol */
+    margin-top: 0;
+    border-bottom: 2px solid #3498db;
+    display: inline-block;
+}
+
+.skill-card ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+/* =========================================
+   PENGATURAN NAVBAR
+   ========================================= */
+.navbar {
+    position: fixed; /* Membuat navbar selalu menempel di atas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(44, 62, 80, 0.95); /* Warna gelap dengan sedikit transparansi */
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Membuat logo ke kiri, menu ke kanan */
+    align-items: center;
+    padding: 1rem 2rem;
+    box-sizing: border-box; /* Mencegah navbar melebar ke luar layar */
+    z-index: 1000; /* Memastikan navbar selalu berada di atas elemen lain */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.navbar ul.nav-links {
+    list-style: none; /* Menghilangkan titik (bullet) pada list */
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* Efek saat menu disorot mouse */
+.navbar ul.nav-links li a:hover {
+    color: #db3434; 
+}
+/* =========================================
+   PENGATURAN RESPONSIVE (UNTUK HP & TABLET)
+   ========================================= */
+/* =========================================
+   PENGATURAN FOOTER
+   ========================================= */
+.footer {
+    background-color: rgba(20, 30, 48, 0.95); /* Warna gelap yang pekat agar membumi */
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 4rem; /* Memberikan jarak napas dari section terakhir */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Garis batas tipis yang elegan */
+}
+
+.footer .footer-content p {
+    margin: 0 0 15px 0;
+    font-size: 0.9rem;
+    color: #bdc3c7; /* Warna teks abu-abu terang agar tidak terlalu mencolok */
+}
+
+.footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer .social-links a {
+    color: #3498db; /* Warna biru senada dengan tema */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+/* Efek saat link di-hover (disentuh mouse) */
+.footer .social-links a:hover {
+    color: #ff0000; /* Berubah jadi putih agar interaktif */
+}
+@media screen and (max-width: 768px) {
+    /* Pengaturan Navbar di HP */
+    .navbar {
+        flex-direction: column; /* Membuat logo dan menu berbaris atas-bawah */
+        padding: 1rem;
+    }
+
+    .navbar ul.nav-links {
+        margin-top: 10px;
+        gap: 15px;
+    }
+    /* Mengecilkan ukuran font dan foto di HP */
+    header h1 {
+        font-size: 1.8rem;
+    }
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Membuat kartu keahlian berbaris ke bawah, tidak ke samping */
+    .skills-container {
+        flex-direction: column; 
+    }
+
+    /* Memperbaiki jarak tombol di layar sempit */
+    .btn-cv {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    
+    /* (Opsional) Membuat tombol memenuhi layar HP agar mudah diklik */
+    .btn-kontak, .btn-cv {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ja'far Maulana Ihsan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <body>
+    <nav class="navbar">
+        <div class="logo">Portofolio</div>
+        <ul class="nav-links">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#keahlian">Keahlian</a></li>
+            <li><a href="#proyeksaya">Proyek Saya</a></li>
+            <li><a href="#tentangsaya">Tentang Saya</a></li>
+            
+        </ul>
+    </nav>
+    <header id="beranda">
+        <img src="foto-profil2.jpg" alt="Foto Profil Ja'far" class="profile-img">
+        <h1>Halo, Saya Ja'far</h1>
+        <p>Welcome to My World</p>
+
+        <a href="mailto:ixanxnax299@gmail.com" class="btn-kontak">Contact Me</a>
+        <a href="CV.pdf" class="btn-cv" download>Unduh CV</a>
+    </header>
+
+
+    <section id="keahlian">
+        <h2>Keahlian</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <h3>Analisis & Riset</h3>
+                <ul>
+                    <li>Machine Learning</li>
+                    <li>Riset Operasi</li>
+                    <li>Interaksi Manusia & Komputer</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>Teknis & Tools</h3>
+                <ul>
+                    <li>Microsoft Excel (Data Analysis)</li>
+                    <li>Video Editing</li>
+                    <li>Dasar Pemrograman Web</li>
+                    <li>Networking</li>
+                    <li>Instalasi Software & Hardware</li>
+                    <li>Etc</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="proyeksaya">
+        <h2>Proyek Saya</h2>
+        <div class="project-card">
+            <h3>Sistem Prediksi</h3>
+            <p>Sistem Prediksi adalah sebuah sistem berbasis komputer yang dirancang untuk menganalisis data historis guna memperkirakan atau memprediksi kejadian di masa depan. Sistem ini biasanya menggunakan pendekatan statistik, algoritma machine learning, atau model matematis untuk menghasilkan prediksi yang akurat dan dapat membantu dalam pengambilan keputusan.</p>
+
+            <div class="simulator-box">
+                <div style="display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap;">
+                    <div>
+                        <label style="font-size: 0.85rem; color: #bdc3c7;">Tahun 1:</label><br>
+                        <input type="number" id="thn1" value="100" style="width: 70px; padding: 5px; border-radius: 4px; border: none; text-align: center;">
+                    </div>
+                    <div>
+                        <label style="font-size: 0.85rem; color: #bdc3c7;">Tahun 2:</label><br>
+                        <input type="number" id="thn2" value="125" style="width: 70px; padding: 5px; border-radius: 4px; border: none; text-align: center;">
+                    </div>
+                    <div>
+                        <label style="font-size: 0.85rem; color: #bdc3c7;">Tahun 3:</label><br>
+                        <input type="number" id="thn3" value="140" style="width: 70px; padding: 5px; border-radius: 4px; border: none; text-align: center;">
+                    </div>
+                </div>
+                
+                <button onclick="hitungPrediksi()" class="btn-small" style="background-color: #9b59b6;">🔮 Prediksi Tahun 4</button>
+                
+                <div class="sim-display" style="margin-top: 15px;">
+                    <p>Estimasi Siswa Baru: <strong id="hasil-prediksi" style="color: #f1c40f;">-</strong> <span style="font-size: 0.9rem;">siswa</span></p>
+                    <p>Simulasi diatas hanya contoh cara kerja sistem prediksi jumlah siswa</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Next Update</h3>
+            <p>Next Update</p>
+        </div>
+
+    </section>
+    <section id="tentangsaya">
+        <h2>Tentang Saya</h2>
+        <p>"Hanya laki-laki yang memiliki banyak kelemahan dan terus berusaha memperbaiki diri"</p>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Jafar Maulana Ihsan. Dibuat dengan semangat (sambil scrool fesnuk) dan segelas kopi ☕</p>
+            <div class="social-links">
+                <a href="https://github.com/jafhdr" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/jafar-maulana-ihsan299" target="_blank">LinkedIn</a>
+                <a href="mailto:ixanxnax299@gmail.com" target="_blank">Email</a>
+                <a href="https://www.instagram.com/jafarlans/" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+<script src="script.js"></script>
+</body>
+</body>
+</html>
