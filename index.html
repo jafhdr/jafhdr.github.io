@@ -1,110 +1,185 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ja'far Maulana Ihsan</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#121212">
+  <meta name="description" content="Portofolio Ja'far Maulana Ihsan. Mengenal minat, keahlian, dan proyek dalam bidang web, data, serta riset.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ja'far Maulana Ihsan — Portofolio">
+  <meta property="og:description" content="Web, data, dan ide yang terus berkembang. Jelajahi keahlian dan proyek saya.">
+  <title>Ja'far Maulana Ihsan — Portofolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="foto-profil2.jpg" as="image">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <body>
-    <nav class="navbar">
-        <div class="logo">Portofolio</div>
-        <ul class="nav-links">
-            <li><a href="#beranda">Beranda</a></li>
-            <li><a href="#keahlian">Keahlian</a></li>
-            <li><a href="#proyeksaya">Proyek Saya</a></li>
-            <li><a href="#tentangsaya">Tentang Saya</a></li>
-            
-        </ul>
-    </nav>
-    <header id="beranda">
-        <img src="foto-profil2.jpg" alt="Foto Profil Ja'far" class="profile-img">
-        <h1>Halo, Saya Ja'far</h1>
-        <p>Welcome to My World</p>
+  <a class="skip-link" href="#konten">Lewati navigasi</a>
+  <nav class="navbar" aria-label="Navigasi utama">
+    <div class="nav-inner container">
+      <a class="brand" href="#beranda" aria-label="Ja'far — kembali ke beranda"><span class="brand-mark">J<span>.</span></span><span class="brand-name">JA'FAR <span>MAULANA</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="nav-links" class="nav-links">
+        <li><a class="nav-link active" href="#beranda">Beranda</a></li>
+        <li><a class="nav-link" href="#tentangsaya">Tentang</a></li>
+        <li><a class="nav-link" href="#keahlian">Keahlian</a></li>
+        <li><a class="nav-link" href="#proyeksaya">Portofolio</a></li>
+        <li><a class="nav-link" href="#kontak">Kontak</a></li>
+      </ul>
+      <a class="nav-cta" href="mailto:ixanxnax299@gmail.com">Mari Terhubung <span aria-hidden="true">↗</span></a>
+    </div>
+  </nav>
 
-        <a href="mailto:ixanxnax299@gmail.com" class="btn-kontak">Contact Me</a>
-        <a href="CV.pdf" class="btn-cv" download>Unduh CV</a>
+  <main id="konten">
+    <header id="beranda" class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-photo" aria-hidden="true">
+        <img src="foto-profil2.jpg" alt="" fetchpriority="high">
+      </div>
+      <div class="hero-watermark" aria-hidden="true">CREATIVE MIND</div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow"><span class="accent-line"></span> SELAMAT DATANG DI PORTOFOLIO SAYA</p>
+          <h1>Halo, saya<br><span>Ja'far</span><br>Maulana Ihsan<span class="period">.</span></h1>
+          <div class="hero-role"><span class="role-rule"></span><p>Web <span class="role-amp">&amp;</span> Data Enthusiast</p></div>
+          <p class="hero-description">Saya senang mengeksplorasi teknologi, memahami data, dan mengubah ide menjadi sesuatu yang bisa digunakan.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#proyeksaya">Jelajahi Proyek <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="CV.pdf" download>Unduh CV <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bottom container">
+        <div class="hero-social" aria-label="Media sosial">
+          <span>IKUTI SAYA</span>
+          <a href="https://github.com/jafhdr" target="_blank" rel="noopener noreferrer">GitHub <span class="sr-only">(tab baru)</span></a>
+          <a href="https://linkedin.com/in/jafar-maulana-ihsan299" target="_blank" rel="noopener noreferrer">LinkedIn <span class="sr-only">(tab baru)</span></a>
+          <a href="https://www.instagram.com/jafarlans/" target="_blank" rel="noopener noreferrer">Instagram <span class="sr-only">(tab baru)</span></a>
+        </div>
+        <a class="scroll-cue" href="#tentangsaya">SCROLL UNTUK MELIHAT <span aria-hidden="true">↓</span></a>
+      </div>
     </header>
 
-
-    <section id="keahlian">
-        <h2>Keahlian</h2>
-        <div class="skills-container">
-            <div class="skill-card">
-                <h3>Analisis & Riset</h3>
-                <ul>
-                    <li>Machine Learning</li>
-                    <li>Riset Operasi</li>
-                    <li>Interaksi Manusia & Komputer</li>
-                </ul>
-            </div>
-            <div class="skill-card">
-                <h3>Teknis & Tools</h3>
-                <ul>
-                    <li>Microsoft Excel (Data Analysis)</li>
-                    <li>Video Editing</li>
-                    <li>Dasar Pemrograman Web</li>
-                    <li>Networking</li>
-                    <li>Instalasi Software & Hardware</li>
-                    <li>Etc</li>
-                </ul>
-            </div>
+    <section id="tentangsaya" class="section about-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span class="section-index">01 /</span> KENALI SAYA</p>
+          <h2>Lebih dari sekadar <em>baris kode.</em></h2>
         </div>
+        <div class="about-layout">
+          <div class="about-visual reveal">
+            <div class="about-image-frame"><img src="foto-profil.jpg" alt="Foto Ja'far Maulana Ihsan" loading="lazy"></div>
+            <div class="about-image-tag"><span class="tag-star" aria-hidden="true">✳</span> Always learning, always growing.</div>
+          </div>
+          <div class="about-copy reveal">
+            <p class="overline">SEDIKIT CERITA</p>
+            <h3>Rasa ingin tahu membawa saya terus belajar.</h3>
+            <p>Saya tertarik pada analisis dan riset, pemrograman web, networking, serta cara teknologi membantu menyelesaikan masalah sehari-hari.</p>
+            <p>Portofolio ini adalah tempat saya membagikan apa yang sedang dipelajari dan dibangun — dari eksperimen data sampai proyek digital sederhana.</p>
+            <blockquote>“Hanya laki-laki yang memiliki banyak kelemahan dan terus berusaha memperbaiki diri.”</blockquote>
+            <a class="text-link" href="CV.pdf" download>Lihat CV saya <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
     </section>
-    <section id="proyeksaya">
-        <h2>Proyek Saya</h2>
-        <div class="project-card">
-            <h3>Sistem Prediksi</h3>
-            <p>Sistem Prediksi adalah sebuah sistem berbasis komputer yang dirancang untuk menganalisis data historis guna memperkirakan atau memprediksi kejadian di masa depan. Sistem ini biasanya menggunakan pendekatan statistik, algoritma machine learning, atau model matematis untuk menghasilkan prediksi yang akurat dan dapat membantu dalam pengambilan keputusan.</p>
 
-            <div class="simulator-box">
-                <div style="display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap;">
-                    <div>
-                        <label style="font-size: 0.85rem; color: #bdc3c7;">Tahun 1:</label><br>
-                        <input type="number" id="thn1" value="100" style="width: 70px; padding: 5px; border-radius: 4px; border: none; text-align: center;">
-                    </div>
-                    <div>
-                        <label style="font-size: 0.85rem; color: #bdc3c7;">Tahun 2:</label><br>
-                        <input type="number" id="thn2" value="125" style="width: 70px; padding: 5px; border-radius: 4px; border: none; text-align: center;">
-                    </div>
-                    <div>
-                        <label style="font-size: 0.85rem; color: #bdc3c7;">Tahun 3:</label><br>
-                        <input type="number" id="thn3" value="140" style="width: 70px; padding: 5px; border-radius: 4px; border: none; text-align: center;">
-                    </div>
-                </div>
-                
-                <button onclick="hitungPrediksi()" class="btn-small" style="background-color: #9b59b6;">🔮 Prediksi Tahun 4</button>
-                
-                <div class="sim-display" style="margin-top: 15px;">
-                    <p>Estimasi Siswa Baru: <strong id="hasil-prediksi" style="color: #f1c40f;">-</strong> <span style="font-size: 0.9rem;">siswa</span></p>
-                    <p>Simulasi diatas hanya contoh cara kerja sistem prediksi jumlah siswa</p>
-                </div>
-            </div>
+    <section id="keahlian" class="section skills-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span class="section-index">02 /</span> APA YANG SAYA PELAJARI</p>
+          <h2>Keahlian <em>&amp; minat.</em></h2>
+          <p class="section-lead">Beberapa bidang yang saya eksplorasi dan terus saya kembangkan.</p>
         </div>
-
-        <div class="project-card">
-            <h3>Next Update</h3>
-            <p>Next Update</p>
+        <div class="skills-grid">
+          <article class="skill-panel reveal">
+            <span class="skill-number">01</span><div class="skill-icon" aria-hidden="true">✳</div>
+            <h3>Analisis &amp; Riset</h3>
+            <p>Berpikir terstruktur, menggali informasi, dan mengenali pola dari data.</p>
+            <ul class="skill-tags" aria-label="Topik analisis dan riset">
+              <li>Machine Learning</li><li>Riset Operasi</li><li>Interaksi Manusia &amp; Komputer</li>
+            </ul>
+          </article>
+          <article class="skill-panel reveal">
+            <span class="skill-number">02</span><div class="skill-icon" aria-hidden="true">⌘</div>
+            <h3>Teknis &amp; Tools</h3>
+            <p>Mempelajari dasar pengembangan web dan berbagai keterampilan teknis.</p>
+            <ul class="skill-tags" aria-label="Topik teknis dan tools">
+              <li>Dasar Pemrograman Web</li><li>Microsoft Excel</li><li>Networking</li><li>Instalasi Software &amp; Hardware</li><li>Video Editing</li>
+            </ul>
+          </article>
         </div>
-
+      </div>
     </section>
-    <section id="tentangsaya">
-        <h2>Tentang Saya</h2>
-        <p>"Hanya laki-laki yang memiliki banyak kelemahan dan terus berusaha memperbaiki diri"</p>
-    </section>
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2026 Jafar Maulana Ihsan. Dibuat dengan semangat (sambil scrool fesnuk) dan segelas kopi ☕</p>
-            <div class="social-links">
-                <a href="https://github.com/jafhdr" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/jafar-maulana-ihsan299" target="_blank">LinkedIn</a>
-                <a href="mailto:ixanxnax299@gmail.com" target="_blank">Email</a>
-                <a href="https://www.instagram.com/jafarlans/" target="_blank">Instagram</a>
-            </div>
+
+    <section id="proyeksaya" class="section work-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span class="section-index">03 /</span> HASIL EKSPLORASI</p>
+          <h2>Proyek <em>pilihan.</em></h2>
+          <p class="section-lead">Eksperimen kecil yang menjadi bagian dari perjalanan belajar saya.</p>
         </div>
-    </footer>
-<script src="script.js"></script>
-</body>
+        <article class="project-feature reveal">
+          <div class="project-information">
+            <div class="project-heading"><span class="project-label">PROYEK 001 · SIMULASI DATA</span><span class="project-arrow" aria-hidden="true">↗</span></div>
+            <h3>Sistem<br>Prediksi<span class="period">.</span></h3>
+            <p>Simulasi prediksi jumlah siswa baru berdasarkan data tiga tahun. Model contoh ini menggunakan rata-rata perubahan tahunan untuk memperkirakan tahun keempat.</p>
+            <div class="project-tags"><span>Analisis Data</span><span>Simulasi</span><span>JavaScript</span></div>
+          </div>
+          <div class="simulator">
+            <div class="sim-topline"><span class="sim-dot"></span><span>SIMULATOR / LIVE DEMO</span><span>01 — 04</span></div>
+            <h4>Coba prediksinya.</h4>
+            <p class="sim-description">Masukkan jumlah siswa untuk tiga tahun berurutan.</p>
+            <form id="prediction-form" novalidate>
+              <div class="sim-inputs">
+                <label for="thn1">Tahun 1 <input type="number" id="thn1" name="thn1" value="100" min="0" step="1" required inputmode="numeric"></label>
+                <label for="thn2">Tahun 2 <input type="number" id="thn2" name="thn2" value="125" min="0" step="1" required inputmode="numeric"></label>
+                <label for="thn3">Tahun 3 <input type="number" id="thn3" name="thn3" value="140" min="0" step="1" required inputmode="numeric"></label>
+              </div>
+              <button class="button button-primary sim-button" type="submit">Hitung Prediksi <span aria-hidden="true">→</span></button>
+            </form>
+            <div class="sim-result" role="status" aria-live="polite" aria-atomic="true">
+              <span>ESTIMASI TAHUN 4</span>
+              <p><strong id="hasil-prediksi">—</strong> <span>siswa</span></p>
+              <small id="sim-message">Hasil akan muncul setelah dihitung.</small>
+            </div>
+            <p class="sim-disclaimer">* Ini simulasi tren sederhana, bukan model prediksi produksi.</p>
+          </div>
+        </article>
+        <div class="next-project reveal">
+          <div><span class="project-label">PROYEK BERIKUTNYA</span><h3>Masih banyak ide yang akan datang.</h3></div>
+          <span class="next-icon" aria-hidden="true">↗</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak" class="section contact-section">
+      <div class="container contact-layout">
+        <div class="reveal">
+          <p class="eyebrow"><span class="section-index">04 /</span> MARI BERBICARA</p>
+          <h2>Punya ide?<br><em>Mari terhubung.</em></h2>
+          <p class="contact-lead">Terbuka untuk diskusi, berbagi wawasan, atau sekadar menyapa.</p>
+          <a class="contact-email" href="mailto:ixanxnax299@gmail.com">ixanxnax299@gmail.com <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="contact-decor reveal" aria-hidden="true"><span>LET'S<br>CONNECT<span class="period">.</span></span><div class="contact-circle">↗</div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="#beranda">JA'FAR<span>.</span></a>
+      <p>© <span id="footer-year">2026</span> Ja'far Maulana Ihsan. Dibuat dengan rasa ingin tahu &amp; secangkir kopi.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/jafhdr" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/jafar-maulana-ihsan299" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/jafarlans/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
