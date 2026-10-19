@@ -1,37 +1,67 @@
-// ==========================================
-// Logika Proyek 2: Sistem Prediksi
-// ==========================================
-function hitungPrediksi() {
-    // 1. Mengambil angka dari kotak input HTML
-    let t1 = parseInt(document.getElementById("thn1").value);
-    let t2 = parseInt(document.getElementById("thn2").value);
-    let t3 = parseInt(document.getElementById("thn3").value);
+(() => {
+  const menuButton = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.nav-links');
+  if (menuButton && menu) {
+    const closeMenu = () => { menu.classList.remove('is-open'); menuButton.setAttribute('aria-expanded', 'false'); menuButton.setAttribute('aria-label', 'Buka menu navigasi'); };
+    menuButton.addEventListener('click', () => {
+      const open = menu.classList.toggle('is-open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Tutup menu navigasi' : 'Buka menu navigasi');
+    });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') { closeMenu(); menuButton.focus(); } });
+    window.addEventListener('resize', () => { if (window.innerWidth > 740) closeMenu(); });
+  }
 
-    // 2. Cek apakah ada kotak yang kosong
-    if (isNaN(t1) || isNaN(t2) || isNaN(t3)) {
-        alert("Harap isi semua data tahun terlebih dahulu!");
-        return;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealItems = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reducedMotion) {
+    const observer = new IntersectionObserver((entries, instance) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); instance.unobserve(entry.target); } });
+    }, {threshold: 0.08});
+    revealItems.forEach(item => observer.observe(item));
+  } else { revealItems.forEach(item => item.classList.add('visible')); }
+
+  if ('IntersectionObserver' in window) {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sectionIds = ['beranda', 'tentangsaya', 'keahlian', 'proyeksaya', 'kontak'];
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+      });
+    }, {rootMargin: '-20% 0px -65% 0px'});
+    sectionIds.forEach(id => { const el = document.getElementById(id); if (el) spy.observe(el); });
+  }
+
+  const predictionForm = document.getElementById('prediction-form');
+  const result = document.getElementById('hasil-prediksi');
+  const message = document.getElementById('sim-message');
+  function hitungPrediksi() {
+    const ids = ['thn1', 'thn2', 'thn3'];
+    const values = ids.map(id => Number(document.getElementById(id)?.value));
+    const valid = ids.every((id, index) => {
+      const input = document.getElementById(id);
+      return input && input.value.trim() !== '' && Number.isSafeInteger(values[index]) && values[index] >= 0;
+    });
+    if (!valid) {
+      message.textContent = 'Masukkan angka bulat yang tidak negatif untuk ketiga tahun.';
+      result.textContent = '—';
+      return;
     }
-
-    // 3. Logika Prediksi (Menggunakan Tren Rata-rata Kenaikan)
-    let selisih1 = t2 - t1; // Kenaikan dari thn 1 ke thn 2
-    let selisih2 = t3 - t2; // Kenaikan dari thn 2 ke thn 3
-    
-    let rataRataKenaikan = (selisih1 + selisih2) / 2;
-
-    // 4. Hitung hasil tahun ke-4
-    let prediksi = Math.round(t3 + rataRataKenaikan);
-
-    // Mencegah hasil prediksi bernilai negatif
-    if (prediksi < 0) {
-        prediksi = 0;
+    const [t1, t2, t3] = values;
+    const forecast = Math.max(0, Math.round(t3 + ((t2 - t1) + (t3 - t2)) / 2));
+    if (!Number.isSafeInteger(forecast)) {
+      result.textContent = '—';
+      message.textContent = 'Angka terlalu besar. Coba nilai yang lebih kecil.';
+      return;
     }
-
-    // 5. Tampilkan hasilnya ke layar web dengan animasi kecil
-    let teksHasil = document.getElementById("hasil-prediksi");
-    teksHasil.innerText = "Menghitung...";
-    
-    setTimeout(() => {
-        teksHasil.innerText = prediksi;
-    }, 1500); // Jeda setengah detik agar terasa seperti sistem sedang berpikir
-}
+    result.textContent = forecast.toLocaleString('id-ID');
+    message.textContent = 'Berdasarkan rata-rata perubahan tahunan dari tiga data input.';
+  }
+  predictionForm?.addEventListener('submit', event => { event.preventDefault(); hitungPrediksi(); });
+  // Keep the existing public handler callable for visitors using older bookmarks/snippets.
+  window.hitungPrediksi = hitungPrediksi;
+  const year = document.getElementById('footer-year');
+  if (year) year.textContent = String(new Date().getFullYear());
+})();
