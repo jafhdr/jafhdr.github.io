@@ -1,0 +1,35 @@
+<footer class="px-6 pb-10 pt-4 sm:px-8">
+  <div class="navbar-shell">
+    <div class="panel flex flex-col items-center justify-between gap-6 rounded-[2rem] px-6 py-6 text-center sm:flex-row sm:text-left">
+      <div>
+        <p class="text-lg font-semibold text-white">Ja'far Maulana Ihsan</p>
+        <p class="mt-1 text-sm text-slate-300">Web Developer | AI & Data Enthusiast</p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 text-sm text-slate-300">
+        <a href="https://github.com/jafhdr" target="_blank" rel="noreferrer" class="transition hover:text-[#d4a373]">GitHub</a>
+        <a href="https://linkedin.com/in/jafar-maulana-ihsan299" target="_blank" rel="noreferrer" class="transition hover:text-[#d4a373]">LinkedIn</a>
+        <a href="mailto:ixanxnax299@gmail.com" class="transition hover:text-[#d4a373]">Email</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script is:inline>
+  const revealNodes = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealNodes.forEach((node) => observer.observe(node));
+  } else {
+    revealNodes.forEach((node) => node.classList.add('visible'));
+  }
+</script>

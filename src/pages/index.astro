@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
+import Certifications from '../components/Certifications.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<BaseLayout title="Ja'far Maulana Ihsan | Web Developer" description="Portfolio Ja'far Maulana Ihsan — Web Developer, AI & Data Enthusiast.">
+  <Navbar />
+  <main class="relative">
+    <Hero />
+    <About />
+    <Skills />
+    <Projects />
+    <Experience />
+    <Education />
+    <Certifications />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>

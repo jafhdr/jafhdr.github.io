@@ -1,0 +1,30 @@
+{
+  "name": "myportofolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jafhdr/jafhdr.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jafhdr/jafhdr.github.io/issues"
+  },
+  "homepage": "https://github.com/jafhdr/jafhdr.github.io#readme",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.4.1",
+    "tailwindcss": "^4.3.3"
+  }
+}
