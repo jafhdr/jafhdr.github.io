@@ -1,0 +1,233 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/global.css';
+
+const screenshots = [
+  {
+    src: '/images/cti-app/01-dashboard-synthetic.png',
+    alt: 'CTI App dashboard showing its workspace overview, navigation, and summary panels with synthetic demo data.',
+    caption: 'Dashboard overview with synthetic workspace data.',
+    width: 1440,
+    height: 1595,
+  },
+  {
+    src: '/images/cti-app/02-threat-intelligence-indicators-synthetic.png',
+    alt: 'Threat intelligence indicator inventory with search and filter controls and synthetic indicator records.',
+    caption: 'Threat intelligence inventory and filtering interface.',
+    width: 1440,
+    height: 1298,
+  },
+  {
+    src: '/images/cti-app/04-case-management-list-synthetic.png',
+    alt: 'Case management workspace showing synthetic investigations, status and priority filters, and a case list.',
+    caption: 'Case list with search, status, and priority controls.',
+    width: 1440,
+    height: 1476,
+  },
+  {
+    src: '/images/cti-app/05-case-investigation-synthetic.png',
+    alt: 'Focused case investigation notes panel containing a clearly identified synthetic demo note.',
+    caption: 'Focused crop of the investigation notes panel.',
+    width: 896,
+    height: 432,
+  },
+  {
+    src: '/images/cti-app/06-attack-surface-assets-synthetic.png',
+    alt: 'Attack surface asset inventory showing synthetic domains, subdomains, and an IP address.',
+    caption: 'Attack surface asset inventory using reserved example values.',
+    width: 1440,
+    height: 1792,
+  },
+  {
+    src: '/images/cti-app/08-case-management-mobile-synthetic.png',
+    alt: 'Mobile case management page at a 375-pixel viewport, showing responsive case cards and filters.',
+    caption: 'Full-page mobile case management capture at 375 pixels; open the image to inspect it at full size.',
+    width: 375,
+    height: 2743,
+  },
+];
+---
+
+<BaseLayout
+  title="CTI App Case Study | Ja'far Maulana Ihsan"
+  description="A case study of CTI App, a full-stack threat intelligence platform. Explore its architecture, key workflows, my implementation contributions, and evidence limitations."
+>
+  <main class="px-5 pb-16 pt-28 sm:px-8 sm:pt-32">
+    <div class="navbar-shell">
+      <a
+        href="/#projects"
+        class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-slate-950/40 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-[#d4a373]/60 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d4a373]"
+      >
+        <span aria-hidden="true">&larr;</span>
+        Back to Projects
+      </a>
+
+      <header class="mt-10 max-w-4xl">
+        <p class="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-[#d4a373]">Project case study</p>
+        <h1 class="glow-line text-4xl font-semibold tracking-[-0.06em] text-white sm:text-6xl">CTI App</h1>
+        <p class="mt-8 max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl">
+          A full-stack threat intelligence platform bringing indicator review, case investigation, and attack surface asset workflows into one application.
+        </p>
+        <p class="mt-5 max-w-3xl text-base leading-7 text-slate-300">
+          I contributed across frontend, backend, database, and feature integration implementation. UI/UX design was not part of my role.
+        </p>
+      </header>
+
+      <section aria-labelledby="overview-heading" class="mt-14 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+        <article class="panel rounded-[2rem] p-6 sm:p-8">
+          <p class="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-[#d4a373]">Project Overview</p>
+          <h2 id="overview-heading" class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">A connected workspace for CTI workflows</h2>
+          <p class="mt-5 leading-7 text-slate-300">
+            CTI App organizes threat intelligence records and provides workflows for managing cases and reviewing attack surface assets. The interface connects related intelligence and investigation context while keeping those work areas available in a single application.
+          </p>
+          <p class="mt-5 leading-7 text-slate-300">
+            This case study focuses on implemented application areas and interface behavior. The screenshots below use synthetic fixtures and do not represent operational activity.
+          </p>
+        </article>
+
+        <aside class="panel rounded-[2rem] p-6 sm:p-8">
+          <p class="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#d4a373]">Tech Stack</p>
+          <ul class="flex flex-wrap gap-2" aria-label="Technology stack">
+            {['Next.js', 'React', 'TypeScript', 'NestJS', 'PostgreSQL', 'Prisma'].map((technology) => (
+              <li class="rounded-full border border-white/10 bg-slate-950/40 px-3 py-2 text-sm text-slate-200">{technology}</li>
+            ))}
+          </ul>
+          <p class="mt-6 text-sm leading-6 text-slate-400">
+            Frontend, API, and persistence technologies are listed from the project manifests and database schema.
+          </p>
+        </aside>
+      </section>
+
+      <section aria-labelledby="architecture-heading" class="panel mt-6 rounded-[2rem] p-6 sm:p-8">
+        <p class="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-[#d4a373]">Architecture</p>
+        <h2 id="architecture-heading" class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Application request and data path</h2>
+        <ol class="mt-7 grid grid-cols-1 items-center gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr]" aria-label="Next.js and React to NestJS API to Prisma to PostgreSQL">
+          <li class="rounded-2xl border border-white/10 bg-slate-950/45 p-4">
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[#d4a373]">Frontend</span>
+            <p class="mt-2 font-semibold text-white">Next.js / React</p>
+            <p class="mt-1 text-sm text-slate-400">Application interface</p>
+          </li>
+          <li aria-hidden="true" class="text-center text-xl text-[#d4a373]"><span class="md:hidden">&darr;</span><span class="hidden md:inline">&rarr;</span></li>
+          <li class="rounded-2xl border border-white/10 bg-slate-950/45 p-4">
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[#d4a373]">API</span>
+            <p class="mt-2 font-semibold text-white">NestJS</p>
+            <p class="mt-1 text-sm text-slate-400">Application endpoints</p>
+          </li>
+          <li aria-hidden="true" class="text-center text-xl text-[#d4a373]"><span class="md:hidden">&darr;</span><span class="hidden md:inline">&rarr;</span></li>
+          <li class="rounded-2xl border border-white/10 bg-slate-950/45 p-4">
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[#d4a373]">Data access</span>
+            <p class="mt-2 font-semibold text-white">Prisma</p>
+            <p class="mt-1 text-sm text-slate-400">ORM and schema</p>
+          </li>
+          <li aria-hidden="true" class="text-center text-xl text-[#d4a373]"><span class="md:hidden">&darr;</span><span class="hidden md:inline">&rarr;</span></li>
+          <li class="rounded-2xl border border-white/10 bg-slate-950/45 p-4">
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[#d4a373]">Database</span>
+            <p class="mt-2 font-semibold text-white">PostgreSQL</p>
+            <p class="mt-1 text-sm text-slate-400">Persistent application data</p>
+          </li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="features-heading" class="mt-14">
+        <div class="max-w-3xl">
+          <p class="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-[#d4a373]">Key Features</p>
+          <h2 id="features-heading" class="glow-line text-3xl font-semibold tracking-[-0.05em] text-white sm:text-4xl">Three connected work areas</h2>
+        </div>
+
+        <div class="mt-8 grid gap-5 md:grid-cols-2">
+          <article class="panel rounded-[2rem] p-6 sm:p-7">
+            <h3 class="text-xl font-semibold text-white">Threat Intelligence</h3>
+            <p class="mt-3 leading-7 text-slate-300">
+              Review an indicator inventory with search and filters, inspect indicator details, and navigate to related cases. The application also includes an enrichment interface.
+            </p>
+          </article>
+          <article class="panel rounded-[2rem] p-6 sm:p-7">
+            <h3 class="text-xl font-semibold text-white">Case Management</h3>
+            <p class="mt-3 leading-7 text-slate-300">
+              Search and filter cases by status and priority, then review investigation notes, evidence, activity, and related intelligence in case workflows.
+            </p>
+          </article>
+          <article class="panel rounded-[2rem] p-6 sm:p-7 md:col-span-2">
+            <h3 class="text-xl font-semibold text-white">Attack Surface Management</h3>
+            <p class="mt-3 max-w-4xl leading-7 text-slate-300">
+              Browse an asset inventory and review asset details and recorded relationships. Discovery controls are present in the application; no discovery operation is represented by this case-study evidence.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="evidence-heading" class="mt-14">
+        <div class="max-w-3xl">
+          <p class="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-[#d4a373]">Selected Interface Evidence</p>
+          <h2 id="evidence-heading" class="glow-line text-3xl font-semibold tracking-[-0.05em] text-white sm:text-4xl">Synthetic demo screenshots</h2>
+          <p class="mt-6 leading-7 text-slate-300">
+            These images show the actual frontend rendered with in-memory mock API responses and synthetic fixtures. They are not operational data and do not demonstrate live backend integration. The original synthetic-data banner is retained in every screenshot.
+          </p>
+        </div>
+
+        <div class="mt-8 grid gap-5 lg:grid-cols-2">
+          {screenshots.map((screenshot, index) => (
+            <figure class:list={['panel overflow-hidden rounded-[1.75rem] p-3 sm:p-4', index === 5 && 'lg:col-span-2']}>
+              <a
+                href={screenshot.src}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Open full-size image: ${screenshot.caption}`}
+                style={index === 5 ? 'max-width: 375px; margin-inline: auto;' : undefined}
+                class="block rounded-xl bg-slate-950/70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d4a373]"
+              >
+                <img
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  width={screenshot.width}
+                  height={screenshot.height}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  class:list={[
+                    'mx-auto rounded-xl object-top',
+                    index === 5 ? 'h-auto w-full object-contain' : 'max-h-[38rem] w-full object-contain',
+                  ]}
+                />
+              </a>
+              <figcaption class="px-2 pb-1 pt-4 text-sm leading-6 text-slate-300">
+                {screenshot.caption}
+                <span class="mt-1 block text-xs text-slate-400">Synthetic data · Mock API · Not operational data</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section aria-labelledby="contributions-heading" class="mt-14 grid gap-6 lg:grid-cols-2">
+        <article class="panel rounded-[2rem] p-6 sm:p-8">
+          <p class="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-[#d4a373]">My Contributions</p>
+          <h2 id="contributions-heading" class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Full-stack implementation</h2>
+          <p class="mt-5 leading-7 text-slate-300">
+            I implemented work across the frontend, backend, database layer, and feature integrations, including the application workflows described above.
+          </p>
+          <p class="mt-4 leading-7 text-slate-300">
+            UI/UX design was not my contribution; I implemented the product within its existing design.
+          </p>
+        </article>
+
+        <article aria-labelledby="testing-heading" class="panel rounded-[2rem] p-6 sm:p-8">
+          <p class="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-[#d4a373]">Testing &amp; Limitations</p>
+          <h2 id="testing-heading" class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Evidence with clear boundaries</h2>
+          <p class="mt-5 leading-7 text-slate-300">
+            Screenshot capture used a clean browser context, synthetic in-memory API responses, blocked API writes, and blocked external requests. Viewport checks for the captured application UI reported no horizontal overflow at desktop and mobile sizes.
+          </p>
+          <p class="mt-4 leading-7 text-slate-300">
+            The screenshots validate presentation only, not live service integration or production behavior. AppSec posture v1 remains awaiting final validation; no final closure is claimed here.
+          </p>
+        </article>
+      </section>
+
+      <nav aria-label="Case study navigation" class="mt-12 border-t border-white/10 pt-7">
+        <a href="/#projects" class="inline-flex items-center gap-2 rounded-full bg-[#d4a373] px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-[#e7ba88] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d4a373]">
+          <span aria-hidden="true">&larr;</span>
+          Back to Projects
+        </a>
+      </nav>
+    </div>
+  </main>
+</BaseLayout>
