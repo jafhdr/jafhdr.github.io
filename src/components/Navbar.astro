@@ -23,9 +23,9 @@ const links = [
         <span class="sr-only">Menu</span>
       </button>
 
-      <div id="nav-menu" class="nav-menu hidden items-center gap-2 md:flex">
+      <div id="nav-menu" class="nav-menu hidden items-center gap-1 xl:flex">
         {links.map((link) => (
-          <a class="rounded-full px-3 py-2 text-sm text-slate-200 transition hover:text-[#d4a373]" href={link.href}>{link.label}</a>
+          <a class="rounded-full px-2.5 py-2 text-sm text-slate-200 transition hover:text-[#d4a373]" href={link.href}>{link.label}</a>
         ))}
         <a class="inline-flex items-center rounded-full border border-[#d4a373]/60 bg-[#d4a373] px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-[#e4b98b]" href="/CV.pdf" download>
           Download CV
@@ -38,7 +38,7 @@ const links = [
 <script is:inline>
   const toggleButton = document.querySelector('.nav-toggle');
   const navMenu = document.getElementById('nav-menu');
-  const desktopNavigation = window.matchMedia('(min-width: 1024px)');
+  const desktopNavigation = window.matchMedia('(min-width: 1280px)');
 
   if (toggleButton && navMenu) {
     const closeMenu = () => {

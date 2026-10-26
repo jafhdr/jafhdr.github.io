@@ -116,7 +116,7 @@ nav[aria-label="Primary navigation"] {
   position: relative;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1279.99px) {
   .nav-toggle {
     position: relative;
     display: inline-flex;
@@ -166,7 +166,11 @@ nav[aria-label="Primary navigation"] {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
+  .nav-toggle {
+    display: none;
+  }
+
   .nav-menu {
     display: flex !important;
   }
