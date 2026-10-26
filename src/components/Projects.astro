@@ -3,33 +3,69 @@
     <div class="reveal mb-12 max-w-2xl">
       <p class="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-[#d4a373]">Projects</p>
       <h2 class="glow-line text-3xl font-semibold tracking-[-0.06em] text-white sm:text-5xl">Selected work</h2>
+      <p class="mt-6 max-w-xl text-base leading-7 text-slate-300">A selection of web applications and interactive tools I have built or am currently developing.</p>
     </div>
 
     <div class="grid gap-8 lg:grid-cols-2">
+      <article class="panel reveal relative overflow-hidden rounded-[2rem] border-[#d4a373]/35 bg-[linear-gradient(135deg,rgba(212,163,115,0.12),rgba(17,24,39,0.78)_52%)] p-6 sm:p-8 lg:col-span-2">
+        <div class="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-[#d4a373]/10 blur-3xl"></div>
+        <div class="relative grid gap-8 md:grid-cols-[1.05fr_0.95fr] md:items-center md:gap-12">
+          <div>
+            <div class="mb-6 flex flex-wrap items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-[#d4a373]">
+              <span class="rounded-full border border-[#d4a373]/40 bg-[#d4a373]/10 px-3 py-1.5">Featured project</span>
+              <span class="rounded-full border border-white/10 bg-slate-950/30 px-3 py-1.5 text-slate-300">In development</span>
+            </div>
+
+            <h3 class="text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl">CTI App</h3>
+            <p class="mt-4 max-w-xl leading-7 text-slate-200">
+              A full-stack threat intelligence platform with workflows for organizing intelligence, managing cases, and monitoring attack surface and application security posture.
+            </p>
+
+            <div class="mt-7">
+              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Technology</p>
+              <ul class="mt-3 flex flex-wrap gap-2">
+                {["Next.js", "React", "NestJS", "PostgreSQL", "Prisma"].map((technology) => (
+                  <li class="rounded-full border border-white/10 bg-slate-950/35 px-3 py-1.5 text-xs font-medium text-slate-200">{technology}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-slate-950/35 p-5 sm:p-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#d4a373]">Project details</p>
+            <ul class="mt-5 space-y-4 text-sm leading-6 text-slate-300">
+              <li><span class="font-semibold text-white">Role:</span> Full-stack development</li>
+              <li><span class="font-semibold text-white">Implemented areas:</span> Authentication and role-based access, threat intelligence, case management, attack surface management, and AppSec posture.</li>
+              <li><span class="font-semibold text-white">Status:</span> Under active development; AppSec Posture v1 closure audit is pending.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
       <article class="panel reveal rounded-[2rem] p-6 sm:p-8">
-        <div class="mb-6 flex items-center justify-between gap-3 text-[0.68rem] uppercase tracking-[0.25em] text-[#d4a373]">
-          <span>Data & prediction</span>
-          <span>Interactive demo</span>
+        <div class="mb-6 flex flex-wrap items-center justify-between gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-[#d4a373]">
+          <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Data & prediction</span>
+          <span class="text-slate-400">Interactive demo</span>
         </div>
 
-        <h3 class="text-2xl font-semibold text-white">Sistem Prediksi Jumlah Siswa</h3>
+        <h3 lang="id" class="text-2xl font-semibold text-white">Sistem Prediksi Jumlah Siswa</h3>
         <p class="mt-5 text-slate-200">
-          A forecasting simulation designed to estimate future student numbers using historical trend data. The model calculates the average increase from the previous two periods and projects the next value.
+          An interactive forecasting demo that estimates future student numbers from three historical values by applying the average change between consecutive periods.
         </p>
 
         <div class="mt-6 rounded-2xl border border-white/10 bg-slate-950/40 p-5">
           <div class="grid gap-4 sm:grid-cols-3">
             <label class="block text-sm text-slate-300">
               <span class="mb-2 block">Year 1</span>
-              <input id="year-1" type="number" value="100" class="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-white outline-none ring-0 focus:border-[#d4a373]" />
+              <input id="year-1" type="number" min="1" max="9007199254740991" step="1" value="100" required aria-describedby="prediction-error" class="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-white outline-none ring-0 focus:border-[#d4a373]" />
             </label>
             <label class="block text-sm text-slate-300">
               <span class="mb-2 block">Year 2</span>
-              <input id="year-2" type="number" value="125" class="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-white outline-none ring-0 focus:border-[#d4a373]" />
+              <input id="year-2" type="number" min="1" max="9007199254740991" step="1" value="125" required aria-describedby="prediction-error" class="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-white outline-none ring-0 focus:border-[#d4a373]" />
             </label>
             <label class="block text-sm text-slate-300">
               <span class="mb-2 block">Year 3</span>
-              <input id="year-3" type="number" value="140" class="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-white outline-none ring-0 focus:border-[#d4a373]" />
+              <input id="year-3" type="number" min="1" max="9007199254740991" step="1" value="140" required aria-describedby="prediction-error" class="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-white outline-none ring-0 focus:border-[#d4a373]" />
             </label>
           </div>
 
@@ -40,27 +76,28 @@
           <div class="mt-6 rounded-2xl border border-[#d4a373]/30 bg-[#d4a373]/10 p-4 text-slate-100">
             <p class="text-sm uppercase tracking-[0.2em] text-[#d4a373]">Forecast result</p>
             <p class="mt-3 text-3xl font-semibold text-white"><span id="prediction-result">—</span> <span class="text-lg text-slate-300">students</span></p>
+            <p id="prediction-error" class="mt-3 text-sm text-red-300" role="alert" aria-live="assertive"></p>
             <p class="mt-3 text-sm text-slate-300">The formula uses the average change from the two previous intervals: ((Y3 - Y2) + (Y2 - Y1)) / 2.</p>
           </div>
         </div>
       </article>
 
       <article class="panel reveal rounded-[2rem] p-6 sm:p-8">
-        <div class="mb-6 flex items-center justify-between gap-3 text-[0.68rem] uppercase tracking-[0.25em] text-[#d4a373]">
-          <span>Portfolio</span>
-          <span>Current project</span>
+        <div class="mb-6 flex flex-wrap items-center justify-between gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-[#d4a373]">
+          <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Portfolio</span>
+          <span class="text-slate-400">Current project</span>
         </div>
 
         <h3 class="text-2xl font-semibold text-white">Portfolio Redesign</h3>
         <p class="mt-5 text-slate-200">
-          A complete editorial-style portfolio redesign built with Astro and Tailwind CSS, optimized for static hosting and responsive presentation across desktop and mobile devices.
+          A responsive portfolio built with Astro and Tailwind CSS, organized into reusable sections and configured for static hosting on GitHub Pages.
         </p>
 
         <ul class="mt-6 space-y-3 text-slate-200">
-          <li>• Static deployment supported for GitHub Pages</li>
-          <li>• Modular layout structure with reusable sections</li>
-          <li>• SEO metadata, accessible navigation, and mobile-first design</li>
-          <li>• Lightweight, maintainable front-end implementation</li>
+          <li>• Component-based page sections</li>
+          <li>• Responsive navigation and layout</li>
+          <li>• Search and social sharing metadata</li>
+          <li>• Interactive student-number forecasting demo</li>
         </ul>
       </article>
     </div>
@@ -70,23 +107,37 @@
 <script is:inline>
   const predictButton = document.getElementById('predict-btn');
   const resultNode = document.getElementById('prediction-result');
+  const errorNode = document.getElementById('prediction-error');
+  const yearInputs = ['year-1', 'year-2', 'year-3'].map((id) => document.getElementById(id));
 
-  if (predictButton && resultNode) {
-    predictButton.addEventListener('click', () => {
-      const year1 = Number(document.getElementById('year-1').value);
-      const year2 = Number(document.getElementById('year-2').value);
-      const year3 = Number(document.getElementById('year-3').value);
-
-      if ([year1, year2, year3].some((value) => Number.isNaN(value))) {
+  if (predictButton && resultNode && errorNode && yearInputs.every(Boolean)) {
+    yearInputs.forEach((input) => {
+      input.addEventListener('input', () => {
         resultNode.textContent = '—';
-        alert('Please complete all year values before forecasting.');
+        errorNode.textContent = '';
+      });
+    });
+
+    predictButton.addEventListener('click', () => {
+      resultNode.textContent = '—';
+      errorNode.textContent = '';
+      const values = yearInputs.map((input) => input.valueAsNumber);
+
+      if (yearInputs.some((input, index) => !input.validity.valid || !Number.isSafeInteger(values[index]))) {
+        errorNode.textContent = 'Enter a whole number greater than zero in each year field. Values must be within the safe numeric range.';
         return;
       }
 
+      const [year1, year2, year3] = values;
       const delta1 = year2 - year1;
       const delta2 = year3 - year2;
       const averageIncrease = (delta1 + delta2) / 2;
       const forecast = Math.max(0, Math.round(year3 + averageIncrease));
+
+      if (!Number.isSafeInteger(forecast)) {
+        errorNode.textContent = 'These values produce a forecast outside the safe numeric range. Use smaller values.';
+        return;
+      }
 
       resultNode.textContent = forecast;
     });

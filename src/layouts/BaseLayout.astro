@@ -1,18 +1,38 @@
 ---
-const { title = "Ja'far Maulana Ihsan | Web Developer", description = "Portfolio Ja'far Maulana Ihsan — Web Developer, AI & Data Enthusiast.", image = "/foto-profil.jpg" } = Astro.props;
+const {
+  title = "Ja'far Maulana Ihsan | Web Developer",
+  description = "Portfolio Ja'far Maulana Ihsan, Web Developer building responsive, maintainable web experiences with Astro, Tailwind CSS, and JavaScript.",
+  image = "/social-preview.jpg",
+  imageAlt = "Ja'far Maulana Ihsan, Web Developer",
+} = Astro.props;
+const siteUrl = Astro.site ?? new URL("https://jafhdr.github.io");
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
+const socialImageUrl = new URL(image, siteUrl);
 ---
 
 <!doctype html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="author" content="Ja'far Maulana Ihsan" />
+    <link rel="canonical" href={canonicalUrl.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content={image} />
+    <meta property="og:url" content={canonicalUrl.href} />
+    <meta property="og:site_name" content="Ja'far Maulana Ihsan" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={socialImageUrl.href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={imageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl.href} />
+    <meta name="twitter:image:alt" content={imageAlt} />
     <meta name="theme-color" content="#0f172a" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>

@@ -6,6 +6,7 @@ const links = [
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "Education", href: "#education" },
+  { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
 ];
 ---
@@ -37,20 +38,35 @@ const links = [
 <script is:inline>
   const toggleButton = document.querySelector('.nav-toggle');
   const navMenu = document.getElementById('nav-menu');
+  const desktopNavigation = window.matchMedia('(min-width: 1024px)');
 
   if (toggleButton && navMenu) {
+    const closeMenu = () => {
+      navMenu.classList.add('hidden');
+      toggleButton.setAttribute('aria-expanded', 'false');
+    };
+
     toggleButton.addEventListener('click', () => {
-      const isOpen = navMenu.classList.toggle('hidden');
+      const isOpen = toggleButton.getAttribute('aria-expanded') === 'true';
+      navMenu.classList.toggle('hidden', isOpen);
       toggleButton.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    desktopNavigation.addEventListener('change', (event) => {
+      if (event.matches) closeMenu();
     });
 
     navMenu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
-        if (window.innerWidth < 768) {
-          navMenu.classList.add('hidden');
-          toggleButton.setAttribute('aria-expanded', 'false');
-        }
+        if (!desktopNavigation.matches) closeMenu();
       });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !navMenu.classList.contains('hidden') && !desktopNavigation.matches) {
+        closeMenu();
+        toggleButton.focus();
+      }
     });
   }
 </script>
