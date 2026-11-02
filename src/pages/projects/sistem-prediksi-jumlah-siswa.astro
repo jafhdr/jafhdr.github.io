@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/global.css';
+---
+
+<BaseLayout
+  title="Sistem Prediksi Jumlah Siswa Baru | Case Study"
+  description="Case study of the PHP, Flask, TensorFlow Keras LSTM, and MySQL student enrollment prediction application."
+>
+  <main class="px-5 pb-16 pt-28 sm:px-8 sm:pt-32">
+    <div class="navbar-shell">
+      <a href="/#projects" class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-slate-950/40 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-[#d4a373]/60 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d4a373]">
+        <span aria-hidden="true">&larr;</span>
+        Back to Projects
+      </a>
+
+      <header class="mt-10 max-w-4xl">
+        <p class="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-[#d4a373]">Project case study</p>
+        <h1 class="glow-line text-4xl font-semibold tracking-[-0.06em] text-white sm:text-6xl">Sistem Prediksi Jumlah Siswa Baru</h1>
+        <p class="mt-8 max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl">
+          A full-stack application for uploading historical school enrollment data, generating a student-count forecast, and reviewing prediction records.
+        </p>
+      </header>
+
+      <section aria-labelledby="overview-heading" class="mt-14 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+        <article class="panel rounded-[2rem] p-6 sm:p-8">
+          <p class="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-[#d4a373]">Project Overview</p>
+          <h2 id="overview-heading" class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Historical data to enrollment forecast</h2>
+          <p class="mt-5 leading-7 text-slate-300">
+            The PHP application provides administrator login, dashboard navigation, CSV upload, prediction access, history, realization input, and PDF export. The Flask service processes the active CSV dataset with a TensorFlow/Keras LSTM model.
+          </p>
+        </article>
+
+        <aside class="panel rounded-[2rem] p-6 sm:p-8">
+          <p class="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#d4a373]">Tech Stack</p>
+          <ul class="flex flex-wrap gap-2" aria-label="Technology stack">
+            {["PHP", "Bootstrap", "Python", "Flask", "TensorFlow/Keras", "LSTM", "MySQL/MariaDB", "pandas", "NumPy", "MinMaxScaler", "Matplotlib"].map((technology) => (
+              <li class="rounded-full border border-white/10 bg-slate-950/40 px-3 py-2 text-sm text-slate-200">{technology}</li>
+            ))}
+          </ul>
+        </aside>
+      </section>
+
+      <section aria-labelledby="architecture-heading" class="panel mt-6 rounded-[2rem] p-6 sm:p-8">
+        <p class="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-[#d4a373]">Architecture</p>
+        <h2 id="architecture-heading" class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">PHP, Flask API, and MySQL</h2>
+        <ol class="mt-7 grid grid-cols-1 items-center gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr]" aria-label="PHP frontend to Flask API to LSTM to MySQL">
+          <li class="rounded-2xl border border-white/10 bg-slate-950/45 p-4">
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[#d4a373]">Frontend</span>
+            <p class="mt-2 font-semibold text-white">PHP / Bootstrap</p>
+            <p class="mt-1 text-sm text-slate-400">Authentication and interface</p>
+          </li>
+          <li aria-hidden="true" class="text-center text-xl text-[#d4a373]"><span class="md:hidden">&darr;</span><span class="hidden md:inline">&rarr;</span></li>
+          <li class="rounded-2xl border border-white/10 bg-slate-950/45 p-4">
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[#d4a373]">Backend</span>
+            <p class="mt-2 font-semibold text-white">Python Flask</p>
+            <p class="mt-1 text-sm text-slate-400">HTTP API and CSV processing</p>
+          </li>
+          <li aria-hidden="true" class="text-center text-xl text-[#d4a373]"><span class="md:hidden">&darr;</span><span class="hidden md:inline">&rarr;</span></li>
+          <li class="rounded-2xl border border-white/10 bg-slate-950/45 p-4">
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[#d4a373]">Model</span>
+            <p class="mt-2 font-semibold text-white">TensorFlow/Keras</p>
+            <p class="mt-1 text-sm text-slate-400">LSTM enrollment forecast</p>
+          </li>
+          <li aria-hidden="true" class="text-center text-xl text-[#d4a373]"><span class="md:hidden">&darr;</span><span class="hidden md:inline">&rarr;</span></li>
+          <li class="rounded-2xl border border-white/10 bg-slate-950/45 p-4">
+            <span class="text-xs font-semibold uppercase tracking-[0.18em] text-[#d4a373]">Data</span>
+            <p class="mt-2 font-semibold text-white">MySQL/MariaDB</p>
+            <p class="mt-1 text-sm text-slate-400">Administrator and history records</p>
+          </li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="workflow-heading" class="mt-14">
+        <div class="max-w-3xl">
+          <p class="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-[#d4a373]">Application Workflow</p>
+          <h2 id="workflow-heading" class="glow-line text-3xl font-semibold tracking-[-0.05em] text-white sm:text-4xl">From CSV upload to prediction review</h2>
+        </div>
+        <div class="mt-8 grid gap-5 md:grid-cols-2">
+          <article class="panel rounded-[2rem] p-6 sm:p-8">
+            <h3 class="text-xl font-semibold text-white">1. Upload and validate the dataset</h3>
+            <p class="mt-4 leading-7 text-slate-300">PHP validates the CSV format and required headers before forwarding it to Flask. Flask also checks the uploaded field, file extension, CSV structure, numeric columns, and row completeness before replacing the active dataset.</p>
+          </article>
+          <article class="panel rounded-[2rem] p-6 sm:p-8">
+            <h3 class="text-xl font-semibold text-white">2. Run the LSTM prediction</h3>
+            <p class="mt-4 leading-7 text-slate-300">The Flask backend normalizes the enrollment series with MinMaxScaler, trains a Keras sequential model containing an LSTM layer and Dense output, then inverts the prediction to the original value scale.</p>
+          </article>
+          <article class="panel rounded-[2rem] p-6 sm:p-8">
+            <h3 class="text-xl font-semibold text-white">3. Display and visualize the result</h3>
+            <p class="mt-4 leading-7 text-slate-300">Matplotlib generates a prediction plot from the active dataset. The PHP interface consumes the Flask JSON endpoint and displays the returned enrollment total.</p>
+          </article>
+          <article class="panel rounded-[2rem] p-6 sm:p-8">
+            <h3 class="text-xl font-semibold text-white">4. Review application records</h3>
+            <p class="mt-4 leading-7 text-slate-300">The PHP application reads prediction history from MySQL and includes realized-value input and PDF export screens. Full UI use of history persistence, these mutations, and PDF generation remains subject to browser and account-based verification.</p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="verification-heading" class="panel mt-14 rounded-[2rem] p-6 sm:p-8">
+        <p class="mb-3 text-xs font-medium uppercase tracking-[0.25em] text-[#d4a373]">Implementation and Verification</p>
+        <h2 id="verification-heading" class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Evidence boundaries</h2>
+        <ul class="mt-6 space-y-4 text-slate-300">
+          <li>The Flask prediction API was executed and returned JSON with HTTP 200.</li>
+          <li>Missing-file and invalid-header CSV requests were verified to return HTTP 400 without replacing the active dataset.</li>
+          <li>Protected PHP pages redirect unauthenticated requests to login; the SQL injection bypass regression was rejected in testing.</li>
+          <li>No model accuracy metric is presented in this case study because held-out evaluation results were not provided.</li>
+          <li>The gender totals currently returned by the API come from the latest CSV row and are not separate LSTM predictions.</li>
+          <li>The API prediction output is an executed test result, not a model accuracy percentage.</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</BaseLayout>
